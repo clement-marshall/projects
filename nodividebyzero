@@ -1,3 +1,5 @@
+#Takes two numbers inout by the user and divides them. Does let you divide by zero or enter a non-number. Exits if you input 'exit.'
+
 firstnumber = 0
 secondnumber = 0
 while 1:
