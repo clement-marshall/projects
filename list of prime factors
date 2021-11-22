@@ -1,0 +1,34 @@
+#Takes an input integer and returns a list of the prime factors of the integer
+
+thenumber = int(input("Enter an integer."))
+listofprimes = []
+listofprimesdivisible = []
+listofprimefactors = []
+
+print("Hello.")
+print("The number is: " + str(thenumber))
+
+def isPrime(n):
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            return False
+        
+    return True
+    
+for n in range (2, (thenumber+1)):
+    if isPrime(n) == True:
+        listofprimes.append(n)
+        
+print("List of primes: " + str(listofprimes))
+
+for n in listofprimes:
+    if thenumber % n == 0:
+        listofprimesdivisible.append(n)
+        
+print("List of primes divisible by the number: " + str(listofprimesdivisible))
+
+for n in listofprimesdivisible:
+    while thenumber % n == 0:
+        listofprimefactors.append(n)
+        
+print("Finally, list of prime factors: " + str(listofprimefactors))
