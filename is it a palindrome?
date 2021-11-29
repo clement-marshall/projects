@@ -1,0 +1,31 @@
+while 1:
+    inputstring = str(input("Input a string."))
+    
+    
+    def isitapalindrome(inputstring):
+        global formattedinputstring
+        formattedinputstring = ""
+        global reversestring
+        reversestring = ""
+        for character in inputstring:
+            if character.isalpha() == True:
+                formattedinputstring += character
+        formattedinputstring = formattedinputstring.lower()
+        reversestring = formattedinputstring[::-1]
+        if reversestring == formattedinputstring:
+            return(True)
+        else:
+            return(False)
+        
+        
+        
+        
+        
+    if isitapalindrome(inputstring) == True:
+        print("It's a palindrome!")
+    else:
+        print("It's not a palindrome.")
+    print("Input string was: " + inputstring)
+    print("Formatted input string was: " + formattedinputstring)
+    print("Reversed formatted string was: " + reversestring)
+    print("\nReady to try again?\n")
