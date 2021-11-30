@@ -1,0 +1,8 @@
+inputstring = str(input("Please enter a sentence."))
+inputlist = []
+newlist = []
+def lowercase(word):
+    return word.lower()
+inputlist = inputstring.split()
+inputlist.sort(key=lowercase)
+print(inputlist)
