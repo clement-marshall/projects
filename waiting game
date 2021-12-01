@@ -1,24 +1,24 @@
 import random
 from datetime import datetime, date, time, timedelta
+import time
 
 while 1:
     targetTime = round((10*random.random()), 2)
     input1 = input(("When you're ready, hit the Enter button and wait " + str(targetTime) + " seconds, and hit Enter again."))
-    startTime = datetime.now()
+    startTime = time.perf_counter()
     
     
-    input2 = input("")
-    endTime = datetime.now()
+    input2 = input(("Wait " + str(targetTime) + " seconds and hit Enter!"))
+    endTime = time.perf_counter()
     
     elapsedTime = endTime - startTime
-    elapsedTime = elapsedTime.total_seconds()
     elapsedTime = round(elapsedTime, 2)
     
-    print("The target time was " + str(targetTime) + " seconds, and your time was " + str(elapsedTime) + " seconds.")
+    print("\nThe target time was " + str(targetTime) + " seconds, and your time was " + str(elapsedTime) + " seconds.")
     if targetTime == elapsedTime:
         print("Good job, you were spot on!")
     elif elapsedTime < targetTime:
         print("You were too fast by " + str(round((targetTime - elapsedTime), 2)) + " seconds.")
     elif elapsedTime > targetTime:
         print("You were too slow by " + str(round((elapsedTime - targetTime), 2)) + " seconds.")
-    print("\n Ready to try again? \n")
+    print("\nReady to try again? \n")
