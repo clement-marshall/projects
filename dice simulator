@@ -108,7 +108,7 @@ def roll_dice(*sides_number):
 
 
 
-#Ask the user for the number of simulations, and receives a varibale number of inputs
+#Ask the user for how many dice, how many sides for each die, and number of simulations
 
 import random
 import collections
