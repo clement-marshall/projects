@@ -2,6 +2,11 @@
 # Function should accept a variable number of sides of dice, and variable number of dice
 # Output is the probability of each possible outcome (each outcome is the sum of the dice)
 # Example: roll_dice(4, 6, 6) simulates rolling one 4 sided die, and two 6 sided dice
+# Each version of the function is more complicated. The last one asks the user how many dice they want to use, 
+#   asks for the number of sides of each die, and asks for the total number of simulations.
+
+
+
 
 
 #Perform the simulation for one die only. Only input variable is the number of sides of the die.
@@ -30,6 +35,10 @@ def roll_dice(sides_number):
     for a, b in ordered_list.items():
         print(str(a) + ": " + str((100 * b/numb_to_divide_by)) + "%")
 """
+
+
+
+
 
 
 #Perform the simulation for 3 dice, and the value of sides can be 0. also takes total number of sims as an input
@@ -61,6 +70,10 @@ def roll_dice(sides_number1, sides_number2, sides_number3, total_sims):
 
 """
 
+
+
+
+
 #Do the simulation a million times for a variable number of inputs
 """
 import random
@@ -89,6 +102,10 @@ def roll_dice(*sides_number):
     for a, b in ordered_list.items():
         print(str(a) + ": " + str((100 * b/numb_to_divide_by)) + "%")
 """
+
+
+
+
 
 
 #Ask the user for the number of simulations, and receives a varibale number of inputs
