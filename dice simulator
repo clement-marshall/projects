@@ -2,7 +2,7 @@
 # Function should accept a variable number of sides of dice, and variable number of dice
 # Output is the probability of each possible outcome (each outcome is the sum of the dice)
 # Example: roll_dice(4, 6, 6) simulates rolling one 4 sided die, and two 6 sided dice
-#The last version of the function accepts any number of integers as inputs, and automatially does a million simulations
+# The last version asks the user how many dice and how many simulations to run.
 
 
 #Perform the simulation for one die only. Only input variable is the number of sides of the die.
@@ -63,7 +63,7 @@ def roll_dice(sides_number1, sides_number2, sides_number3, total_sims):
 """
 
 #Do the simulation a million times for a variable number of inputs
-
+"""
 import random
 import collections
 
@@ -89,3 +89,53 @@ def roll_dice(*sides_number):
     
     for a, b in ordered_list.items():
         print(str(a) + ": " + str((100 * b/numb_to_divide_by)) + "%")
+"""
+
+
+#Ask the user for the number of simulations, and receives a varibale number of inputs
+
+import random
+import collections
+
+def roll_dice(*sides_number):
+    sim_number = 0
+    random_number = 0
+    outcomes_dict = {}
+    numb_to_divide_by = 0
+    number_of_dice = 0
+    list_of_dice_number = []
+    number_to_append = 0
+    
+    number_of_dice = int(input("How many dice?"))
+    
+    
+    for x in range(1, number_of_dice+1):
+        number_to_append = input("Number of sides for die number " + str(x) + ":")
+        list_of_dice_number.append(int(number_to_append))
+    
+    total_sims = int(input("Total number of simulations?"))
+    
+    print("Your dice: " + str(list_of_dice_number))
+    
+    print("Calculating...")
+    
+    while sim_number < total_sims:
+        random_number = 0
+        for x in list_of_dice_number:
+            random_number += random.randint(1, x)
+        if random_number not in outcomes_dict:
+            outcomes_dict[random_number] = 1
+        else:
+            outcomes_dict[random_number] += 1
+        sim_number += 1
+  
+    for x in outcomes_dict.values():
+        numb_to_divide_by += x
+        
+    ordered_list = collections.OrderedDict(sorted(outcomes_dict.items()))
+    
+    for a, b in ordered_list.items():
+        print(str(a) + ": " + str((100 * b/numb_to_divide_by)) + "%")
+
+roll_dice()
+
