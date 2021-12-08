@@ -2,7 +2,6 @@
 # Function should accept a variable number of sides of dice, and variable number of dice
 # Output is the probability of each possible outcome (each outcome is the sum of the dice)
 # Example: roll_dice(4, 6, 6) simulates rolling one 4 sided die, and two 6 sided dice
-# The last version asks the user how many dice and how many simulations to run.
 
 
 #Perform the simulation for one die only. Only input variable is the number of sides of the die.
@@ -106,6 +105,12 @@ def roll_dice(*sides_number):
     list_of_dice_number = []
     number_to_append = 0
     
+    print("This is a dice rolling simulator.") 
+    print("First it will ask you how many dice you have. Then it will ask for the number of sides of each die.") 
+    print("Then it will ask how many total simulations you want to perform.") 
+    print("Finally it will return a list of dice outcomes with the probability of each.")
+    print("Ready to begin?\n")
+    
     number_of_dice = int(input("How many dice?"))
     
     
@@ -115,9 +120,9 @@ def roll_dice(*sides_number):
     
     total_sims = int(input("Total number of simulations?"))
     
-    print("Your dice: " + str(list_of_dice_number))
+    print("\nYour dice: " + str(list_of_dice_number))
     
-    print("Calculating...")
+    print("Calculating...\n")
     
     while sim_number < total_sims:
         random_number = 0
